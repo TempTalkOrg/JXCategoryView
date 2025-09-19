@@ -9,7 +9,6 @@
 #import "JXCategoryTitleCell.h"
 #import "JXCategoryTitleCellModel.h"
 #import "JXCategoryFactory.h"
-#import "RTLManager.h"
 
 @interface JXCategoryTitleCell ()
 @property (nonatomic, strong) CALayer *titleMaskLayer;
@@ -156,12 +155,6 @@
             bottomMaskFrame.origin.x = topMaskframe.origin.x - bottomMaskFrame.size.width;
         } else {
             bottomMaskFrame.origin.x = CGRectGetMaxX(topMaskframe);
-        }
-        
-        // 适配RTL布局（镜像x值）
-        if ([RTLManager supportRTL]) {
-            topMaskframe.origin.x = self.maskTitleMaskLayer.superlayer.frame.size.width - CGRectGetMaxX(topMaskframe);
-            bottomMaskFrame.origin.x = self.titleMaskLayer.superlayer.frame.size.width - CGRectGetMaxX(bottomMaskFrame);
         }
 
         [CATransaction begin];

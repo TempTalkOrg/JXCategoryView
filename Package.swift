@@ -24,8 +24,6 @@ let package = Package(
         .target(
             name: "JXCategoryView",
             dependencies: [],
-            path: "Sources",
-            resources: [.copy("PrivacyInfo.xcprivacy")]
-        ),
+            path: "Sources"),
     ]
 )
